@@ -2,7 +2,7 @@ import low from "lowdb";
 import LocalStorage from "lowdb/adapters/LocalStorage";
 
 export const DATABASE_NAME = "pm-database";
-export const enum Tables {
+export enum Tables {
     PROJECTS = "projects",
 }
 

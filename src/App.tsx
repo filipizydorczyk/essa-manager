@@ -1,21 +1,13 @@
 import React from "react";
+import ProjectsView from "./views/ProjectsView";
+import { BrowserRouter as Router, Route } from "react-router-dom";
 
 function App() {
     return (
         <div className="App">
-            <header className="App-header">
-                <p>
-                    Edit <code>src/App.tsx</code> and save to reload.
-                </p>
-                <a
-                    className="App-link"
-                    href="https://reactjs.org"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                >
-                    Learn React
-                </a>
-            </header>
+            <Router>
+                <Route exact path="/" component={ProjectsView} />
+            </Router>
         </div>
     );
 }
