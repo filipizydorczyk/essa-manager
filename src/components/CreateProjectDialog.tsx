@@ -29,6 +29,11 @@ export default function CreateProjectDialog({
         setDescription(e.currentTarget.value);
     };
 
+    const submit = () => {
+        handleSubmit({ name, description });
+        handleClose();
+    };
+
     return (
         <Dialog
             open={isOpen}
@@ -43,12 +48,7 @@ export default function CreateProjectDialog({
                 <h3>Description</h3>
                 <input type="text" onChange={handleDescriptionEvent} />
 
-                <button
-                    onClick={() => {
-                        handleSubmit({ name, description });
-                        handleClose();
-                    }}
-                >
+                <button type="submit" onClick={submit}>
                     Add
                 </button>
             </div>

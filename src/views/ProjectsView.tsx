@@ -1,5 +1,6 @@
 import React, { useContext } from "react";
 import { ProjectsContext } from "../context/ProjectsContext";
+import ProjectsTable from "../components/ProjectsList";
 import CreateProjectDialog from "../components/CreateProjectDialog";
 import { v4 as uuidv4 } from "uuid";
 
@@ -29,6 +30,7 @@ function ProjectsView() {
                     });
                 }}
             />
+            <ProjectsTable data={projectsContex.projects} />
         </div>
     );
 }
