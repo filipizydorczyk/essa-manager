@@ -1,0 +1,15 @@
+.project-view {
+    h1 {
+        margin-left: 1rem;
+    }
+
+    &__container {
+        display: flex;
+
+        &-left,
+        &-right {
+            width: 50%;
+            min-height: 100px;
+        }
+    }
+}

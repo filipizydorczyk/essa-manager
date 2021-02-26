@@ -1,6 +1,8 @@
 import React, { useContext } from "react";
 import { SingleProjectContext } from "../context/SingleProjectContext";
 import { useParams } from "react-router-dom";
+import Kanban from "../components/Kanban";
+import "../styles/project-view.scss";
 
 interface ProjectParams {
     id: string;
@@ -13,7 +15,13 @@ function ProjectView() {
 
     return (
         <div className="project-view">
-            <p>{projectContex.project?.name}</p>
+            <h1>{projectContex.project?.name}</h1>
+            <div className="project-view__container">
+                <div className="project-view__container-left"> </div>
+                <div className="project-view__container-right">
+                    <Kanban data={[]} />
+                </div>
+            </div>
         </div>
     );
 }
