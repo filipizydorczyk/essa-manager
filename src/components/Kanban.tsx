@@ -1,6 +1,7 @@
 import React from "react";
 import Board from "@lourenci/react-kanban";
-import "@lourenci/react-kanban/dist/styles.css";
+import "../styles/kanban.scss";
+import KanbanCard from "./KanbanCard";
 
 //------
 
@@ -79,18 +80,8 @@ export default function Kanban({ data }: ProjectsTableProps) {
                 id: new Date().getTime(),
                 ...draftCard,
             })}
-            renderCard={(xd: any, { removeCard, dragging }: any) => (
-                // <YourCard dragging={dragging}>
-                //   {content}
-                //   <button type="button" onClick={removeCard}>Remove Card</button>
-                // </YourCard>
-                <div>
-                    {"lol"}
-                    <button type="button" onClick={removeCard}>
-                        Remove Card
-                    </button>
-                    {console.log(xd)}
-                </div>
+            renderCard={(data: any, { removeCard, dragging }: any) => (
+                <KanbanCard name="Test" description="nadaltest" />
             )}
         />
     );

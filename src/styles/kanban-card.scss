@@ -1,0 +1,16 @@
+.kanban-card {
+    width: 100%;
+    background-color: #fff;
+    border-radius: 5px;
+    border-left: 3px solid violet;
+    padding: 0.5rem 1rem;
+    margin-bottom: 0.5rem;
+
+    &__name {
+        margin: 0;
+    }
+
+    &__description {
+        margin: 0;
+    }
+}

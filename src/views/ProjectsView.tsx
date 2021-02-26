@@ -3,6 +3,7 @@ import { ProjectsContext } from "../context/ProjectsContext";
 import ProjectsTable from "../components/ProjectsList";
 import CreateProjectDialog from "../components/CreateProjectDialog";
 import { v4 as uuidv4 } from "uuid";
+import { createDeafultCoulmns } from "../types";
 
 function ProjectsView() {
     const projectsContex = useContext(ProjectsContext);
@@ -27,6 +28,7 @@ function ProjectsView() {
                         id: uuidv4() as string,
                         name: data.name,
                         description: data.description,
+                        columns: createDeafultCoulmns(),
                     });
                 }}
             />
