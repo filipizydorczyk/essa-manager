@@ -8,11 +8,11 @@ export interface NoteEditorProps {
 export default function NoteEditor({ markdown }: NoteEditorProps) {
     const options = {
         theme: "vs",
+        automaticLayout: true,
     };
 
     return (
         <MonacoEditor
-            height="500px"
             language="markdown"
             onChange={console.log}
             value={markdown}
