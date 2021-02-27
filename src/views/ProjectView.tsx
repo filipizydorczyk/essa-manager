@@ -16,7 +16,12 @@ function ProjectView() {
 
     return (
         <div className="project-view">
-            <h1>{projectContex.project?.name}</h1>
+            <div className="project-view__top-nav">
+                <button>Save</button>
+                <button>Add column</button>
+                <button>Add task</button>
+                <h1>{projectContex.project?.name}</h1>
+            </div>
             <div className="project-view__container">
                 <div className="project-view__container-left">
                     <NoteEditor markdown={projectContex.project?.description} />

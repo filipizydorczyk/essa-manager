@@ -1,6 +1,16 @@
 .project-view {
-    h1 {
-        margin-left: 1rem;
+    &__top-nav {
+        margin: 0 1rem;
+        display: flex;
+        flex-direction: row-reverse;
+
+        h1 {
+            flex-grow: 1;
+        }
+
+        button {
+            margin-left: 1rem;
+        }
     }
 
     &__container {

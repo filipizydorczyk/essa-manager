@@ -4,6 +4,7 @@ import ProjectsTable from "../components/ProjectsList";
 import CreateProjectDialog from "../components/CreateProjectDialog";
 import { v4 as uuidv4 } from "uuid";
 import { createDeafultCoulmns } from "../types";
+import "../styles/projects-view.scss";
 
 function ProjectsView() {
     const projectsContex = useContext(ProjectsContext);
@@ -19,7 +20,10 @@ function ProjectsView() {
 
     return (
         <div className="projects-view">
-            <button onClick={handleClickOpen}>Dodaj projekt</button>
+            <div className="projects-view__top-nav">
+                <button onClick={handleClickOpen}>Dodaj projekt</button>
+            </div>
+
             <CreateProjectDialog
                 isOpen={open}
                 handleClose={handleClose}
