@@ -22,7 +22,7 @@ function ProjectView() {
                     <NoteEditor markdown={projectContex.project?.description} />
                 </div>
                 <div className="project-view__container-right">
-                    <Kanban data={[]} />
+                    <Kanban data={projectContex.columns} />
                 </div>
             </div>
         </div>

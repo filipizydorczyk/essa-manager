@@ -10,7 +10,7 @@ export interface Project {
 export interface Column {
     id: string;
     name: string;
-    tasks: Array<string>;
+    tasks: Array<Task>;
 }
 
 export interface Task {
