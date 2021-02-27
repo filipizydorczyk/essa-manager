@@ -1,4 +1,4 @@
-import React, { useContext } from "react";
+import React, { useContext, useEffect } from "react";
 import { SingleProjectContext } from "../context/SingleProjectContext";
 import { useParams } from "react-router-dom";
 import Kanban from "../components/Kanban";
@@ -12,7 +12,9 @@ interface ProjectParams {
 function ProjectView() {
     const projectContex = useContext(SingleProjectContext);
     const { id }: ProjectParams = useParams();
-    projectContex.selectProject(id);
+    useEffect(() => {
+        projectContex.selectProject(id);
+    });
 
     return (
         <div className="project-view">
