@@ -27,9 +27,15 @@ export default function Kanban({ data }: ProjectsTableProps) {
 
     return (
         <Board
-            renderCard={(data: any, { removeCard, dragging }: any) => (
-                <KanbanCard name="Test" description="nadaltest" />
-            )}
+            renderCard={(data: any, { removeCard, dragging }: any) => {
+                console.log(data);
+                return (
+                    <KanbanCard
+                        name={data.title}
+                        description={data.description}
+                    />
+                );
+            }}
         >
             {boardData}
         </Board>

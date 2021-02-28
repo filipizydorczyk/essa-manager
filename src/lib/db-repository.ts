@@ -1,10 +1,9 @@
 import low from "lowdb";
 import LocalStorage from "lowdb/adapters/LocalStorage";
-import { Project, Task } from "../types";
+import { Project } from "../types";
 
 interface DBSchema {
     projects: Array<Project>;
-    tasks: Array<Task>;
 }
 
 export const DATABASE_NAME = "pm-database";
