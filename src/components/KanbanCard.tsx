@@ -6,6 +6,11 @@ export interface KanbanCardProps {
     description: string;
 }
 
+export interface KanbanCardPosition {
+    column: string;
+    position: number;
+}
+
 export default function KanbanCard({ name, description }: KanbanCardProps) {
     return (
         <div className="kanban-card">

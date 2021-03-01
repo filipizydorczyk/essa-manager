@@ -48,7 +48,10 @@ function ProjectView() {
                             />
                         </div>
                         <div className="project-view__container-right">
-                            <Kanban data={projectContex.columns} />
+                            <Kanban
+                                data={projectContex.columns}
+                                handleCardMove={console.log}
+                            />
                         </div>
                     </div>
                 </>
