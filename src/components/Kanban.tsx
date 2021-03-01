@@ -7,6 +7,7 @@ import { Column } from "../types";
 export interface ProjectsTableProps {
     data: Array<Column>;
     handleCardMove: (data: CardMovedResponse) => void;
+    handleColumnMove: (data: ColumnMovedResponse) => void;
 }
 
 export interface CardMovedResponse {
@@ -15,7 +16,17 @@ export interface CardMovedResponse {
     card: string;
 }
 
-export default function Kanban({ data, handleCardMove }: ProjectsTableProps) {
+export interface ColumnMovedResponse {
+    source: number;
+    destination: number;
+    column: string;
+}
+
+export default function Kanban({
+    data,
+    handleCardMove,
+    handleColumnMove,
+}: ProjectsTableProps) {
     const boardData = {
         columns: data.map((column) => {
             return {
@@ -53,6 +64,13 @@ export default function Kanban({ data, handleCardMove }: ProjectsTableProps) {
                         column: destination.toColumnId,
                         position: destination.toPosition,
                     },
+                });
+            }}
+            onColumnDragEnd={(column: any, source: any, destination: any) => {
+                handleColumnMove({
+                    column: column.id,
+                    source: source.fromPosition,
+                    destination: destination.toPosition,
                 });
             }}
         >
