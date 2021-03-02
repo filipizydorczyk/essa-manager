@@ -51,7 +51,13 @@ function ProjectView() {
                             <Kanban
                                 data={projectContex.columns}
                                 handleCardMove={console.log}
-                                handleColumnMove={console.log}
+                                handleColumnMove={(data) => {
+                                    console.log(data);
+                                    projectContex.swapColumns(
+                                        data.source,
+                                        data.destination
+                                    );
+                                }}
                             />
                         </div>
                     </div>

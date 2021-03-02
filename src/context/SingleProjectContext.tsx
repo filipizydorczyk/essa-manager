@@ -11,6 +11,7 @@ interface SingleProjectContextState {
     columns: Array<Column>;
     selectProject: (id: string) => void;
     addTask: (column_id: string, task: Task) => boolean;
+    swapColumns: (start: number, end: number) => void;
 }
 
 export const SingleProjectContext = createContext<SingleProjectContextState>({
@@ -20,6 +21,7 @@ export const SingleProjectContext = createContext<SingleProjectContextState>({
     addTask: (column_id: string, task: Task) => {
         return false;
     },
+    swapColumns: (start: number, end: number) => {},
 });
 
 export const SingleProjectProvider = ({
@@ -52,9 +54,27 @@ export const SingleProjectProvider = ({
         }
     };
 
+    /**
+     *
+     * @param start
+     * @param end
+     */
+    const swapColumns = (start: number, end: number) => {
+        const columns = project?.columns;
+
+        if (columns && project) {
+            [columns[start], columns[end]] = [columns[end], columns[start]];
+            setColumns([...columns]);
+            db.get(Tables.PROJECTS)
+                .find({ id: project.id })
+                .assign({ columns: project.columns })
+                .write();
+        }
+    };
+
     return (
         <SingleProjectContext.Provider
-            value={{ project, selectProject, columns, addTask }}
+            value={{ project, selectProject, columns, addTask, swapColumns }}
         >
             {children}
         </SingleProjectContext.Provider>
