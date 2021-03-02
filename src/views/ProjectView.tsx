@@ -50,9 +50,13 @@ function ProjectView() {
                         <div className="project-view__container-right">
                             <Kanban
                                 data={projectContex.columns}
-                                handleCardMove={console.log}
+                                handleCardMove={(data) => {
+                                    projectContex.moveTask(
+                                        data.source,
+                                        data.destination
+                                    );
+                                }}
                                 handleColumnMove={(data) => {
-                                    console.log(data);
                                     projectContex.swapColumns(
                                         data.source,
                                         data.destination
