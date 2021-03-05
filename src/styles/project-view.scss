@@ -20,6 +20,19 @@
         &-right {
             width: 50%;
             min-height: 100px;
+
+            @media (max-width: 810px) {
+                width: 100%;
+            }
+        }
+
+        &-right {
+            background-color: rgb(58, 114, 187);
+            padding-left: 0.5rem;
+        }
+
+        @media (max-width: 810px) {
+            display: block;
         }
     }
 }
