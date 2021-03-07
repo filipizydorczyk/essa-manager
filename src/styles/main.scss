@@ -12,6 +12,10 @@ code {
         monospace;
 }
 
+* {
+    box-sizing: border-box;
+}
+
 /* MVP.css v1.6.3 - https://github.com/andybrewer/mvp */
 
 :root {
@@ -68,7 +72,7 @@ body {
     line-height: var(--line-height);
     margin: 0;
     overflow-x: hidden;
-    padding: 1rem 0;
+    padding: 0;
 }
 
 footer,

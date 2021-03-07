@@ -3,6 +3,7 @@
         margin: 0 1rem;
         display: flex;
         flex-direction: row-reverse;
+        height: 90px;
 
         h1 {
             flex-grow: 1;
@@ -11,10 +12,24 @@
         button {
             margin-left: 1rem;
         }
+
+        @media (max-width: 550px) {
+            height: 40px;
+
+            h1 {
+                font-size: 0.8rem;
+            }
+
+            button {
+                padding: 2px;
+                font-size: 0.7rem;
+            }
+        }
     }
 
     &__container {
         display: flex;
+        height: calc(100vh - 90px);
 
         &-left,
         &-right {
@@ -26,7 +41,12 @@
             }
         }
 
+        &-left {
+            overflow: hidden;
+        }
+
         &-right {
+            overflow-y: scroll;
             background-color: rgb(58, 114, 187);
             padding-left: 0.5rem;
         }
