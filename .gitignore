@@ -23,3 +23,9 @@ yarn-debug.log*
 yarn-error.log*
 
 .pytest_cache
+
+#  covodora
+
+www
+platforms
+plugins
