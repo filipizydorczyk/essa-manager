@@ -1,6 +1,6 @@
 # Android
 
-To build android version ![cordova](https://cordova.apache.org/) is used. You need to build `html` verison first by `npm run build`.
+To build android version [cordova](https://cordova.apache.org/) is used. You need to build `html` verison first by `npm run build`.
 For the first time building android version you need to type first `cordova platform add android` first.
 For ther rest time type `cordova build android`.
 
