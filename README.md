@@ -1,6 +1,6 @@
 # Project status
 
-I stopped developing this project because I stopped needing this. Maybe I will comeback to this project one day.
+I stopped developing this project because I no longer needed this. Maybe I will comeback to this project one day.
 
 # Android
 
