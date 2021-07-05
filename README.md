@@ -1,3 +1,7 @@
+# Project status
+
+I stopped developing this project because I stopped needing this. Maybe I will comeback to this project one day.
+
 # Android
 
 To build android version [cordova](https://cordova.apache.org/) is used. You need to build `html` verison first by `npm run build`.
